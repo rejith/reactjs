@@ -8,12 +8,13 @@ import * as router from 'react-router-dom'
 export class SaveAccount extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {name: "", fullName: "", login: ""};
+        this.state = {name: "", fullName: "", login: "", email: ""};
 
         this.onChangeName = this.onChangeName.bind(this);
         this.onChangeFullName = this.onChangeFullName.bind(this);
         this.onChangeLogin = this.onChangeLogin.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.onChangeEmail = this.onChangeEmail.bind(this);
     }
     onChangeName(e) {
         var val = e.target.value;
@@ -26,6 +27,10 @@ export class SaveAccount extends React.Component{
     onChangeLogin(e) {
         var val = e.target.value;
         this.setState({login: val});
+    }
+    onChangeEmail(e) {
+        var val = e.target.value;
+        this.setState({email: val});
     }
 
     handleSubmit(e) {
@@ -51,6 +56,9 @@ export class SaveAccount extends React.Component{
                 </InputGroup>
                 <InputGroup className="m-1">
                     <Input placeholder="login" type="text" value={this.state.login} onChange={this.onChangeLogin}/>
+                </InputGroup>
+                <InputGroup className="m-1">
+                    <Input placeholder="email" type="text" value={this.state.email} onChange={this.onChangeEmail}/>
                 </InputGroup>
                 <Button className="m-1" color="success" type="submit">Save</Button>
                 <Link to="/" className="m-1 btn btn-primary">Back</Link>

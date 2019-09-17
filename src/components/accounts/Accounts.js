@@ -49,6 +49,7 @@ export class Accounts extends React.Component {
             <td>{it.name}</td>
             <td>{it.fullName}</td>
             <td>{it.login}</td>
+            <td>{it.email}</td>
         </tr>);
         if (error) {
             return <div>Ошибка: {error.message}</div>;
@@ -70,6 +71,7 @@ export class Accounts extends React.Component {
                         <th>Name</th>
                         <th>Full name</th>
                         <th>Login</th>
+                        <th>Email</th>
                     </tr>
                     </thead>
                     <tbody>
