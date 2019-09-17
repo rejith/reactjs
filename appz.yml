@@ -3,3 +3,22 @@ app:
   code: REACTWEB
   notify: appzdev@cloudbourne.co
  
+build:
+  version: 0.1
+  env: DEV
+  build_file: none
+  output_files: output/*.zip
+  image_template: react-16.9
+  image_name: myco/reactweb
+
+deploy:
+  context: myco/DEV
+  replicas: 1
+  port:
+  - 80
+
+monitor:
+  notify: appzops@cloudbourne.co      
+
+properties:
+  revision : 17
